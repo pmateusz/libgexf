@@ -16,3 +16,6 @@ include_directories(${HEADERS} ${LIBXML2_INCLUDE_DIR})
 add_library(gexf STATIC ${SOURCE})
 target_link_libraries (gexf ${LIBXML2_LIBRARIES})
 target_compile_definitions(gexf PUBLIC ${LIBXML2_DEFINITIONS})
+
+install(TARGETS gexf ARCHIVE DESTINATION lib)
+install(DIRECTORY ${HEADERS} DESTINATION include FILES_MATCHING PATTERN "*.h")
